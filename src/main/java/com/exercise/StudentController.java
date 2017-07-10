@@ -18,18 +18,12 @@ import javax.servlet.http.HttpServletResponse;
 public class StudentController
  {
 
-     @RequestMapping(value = "/index.html", method = RequestMethod.GET)
-     public String printWelcome(ModelMap model) {
-         model.addAttribute("message", "HELLO WORLD FROM JSP");
-         return "index";
-     }
+   @RequestMapping(value = "/index.html", method = RequestMethod.GET)
+   public String printWelcome(ModelMap model) {
 
-     @ResponseBody
-     @RequestMapping(value = "/hello")
-     public String hello(ModelMap model){
-         model.addAttribute("msg","Hello World");
-         return "hello world";
-     }
+       model.addAttribute("message", "HELLO WORLD");
+       return "index";
 
+   }
 
 }

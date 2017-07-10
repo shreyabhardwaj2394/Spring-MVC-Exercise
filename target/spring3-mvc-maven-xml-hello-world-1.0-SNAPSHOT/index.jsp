@@ -13,7 +13,13 @@
 <body>
 <h1>${message}</h1>
 <h1>${msg}</h1>
-<h1>${msg1}</h1>
-<h1>${msg2}</h1>
+
+<form  action="submitForm" method="post">
+    First Name<input name="fname" type="text">
+    Last Name<input name="lname" type="text">
+    <input type="submit" value="submit">
+</form>
+${msg1}
+${msg2}
 </body>
 </html>

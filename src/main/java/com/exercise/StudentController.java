@@ -13,16 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by Shreya on 7/9/2017.
  */
-
-public class StudentController extends AbstractController
+@Controller
+public class StudentController
  {
 
-    @Override
-    protected ModelAndView handleRequestInternal(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        ModelAndView model=new ModelAndView("index");
-        model.addObject("message","HELLO FROM INDEX.JSP");
-        return model;
-    }
+     @RequestMapping(value = "/index.html", method = RequestMethod.GET)
+     public String printWelcome(ModelMap model) {
+         model.addAttribute("message", "HELLO WORLD FROM JSP");
+         return "index";
+
+     }
 
 
 }

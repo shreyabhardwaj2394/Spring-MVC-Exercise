@@ -16,20 +16,17 @@ import javax.servlet.http.HttpServletResponse;
  * Created by Shreya on 7/9/2017.
  */
 
-public class StudentController extends MultiActionController {
+@Controller
 
-    @RequestMapping(value = "/")
-    public ModelAndView dummy(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws Exception {
-        ModelAndView modelAndView=new ModelAndView("index");
-        return modelAndView;
-
-    }
+public class StudentController {
 
 
-    public void dummy2(HttpServletRequest httpServletRequest,
-                       HttpServletResponse httpServletResponse) throws Exception {
-        httpServletResponse.setContentType("text/html");
-        httpServletResponse.getWriter().println("<b>HELLO World from dummy2</b>");
+    //Hit submit.jsp
+
+    @RequestMapping(value = "/user", method = RequestMethod.POST)
+    @ResponseBody
+    String submitForm(User user) {
+        return "FirstName " + user.getFirstName() + " LastName " + user.getLastName();
     }
 
 
